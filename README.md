@@ -1,3 +1,5 @@
+# EZ Forms
+
 ## Features:
   - Form similar to Auto Advisor
   - Generate PDF to represent Student Schedule
