@@ -1,4 +1,3 @@
-package Backend;
 
 public class ChangeEnrollment {
     private int id;

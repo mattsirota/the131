@@ -1,4 +1,3 @@
-package Backend;
 
 public class Course {
     private String courseMajor;
