@@ -4,6 +4,7 @@ public class ChangeEnrollment {
 
     private String lastName;
     private String firstName;
+    private String middleName;
     private String studentId;
     private String streetAddr;
     private String cityAddr;
@@ -15,10 +16,13 @@ public class ChangeEnrollment {
     private String __studentSignature;
     private String __signatureDate;
 
-    private boolean fall;
     private boolean winter;
     private boolean spring;
     private boolean summerI;
     private boolean summerII;
+    private boolean fall;
     private int year;
+    // make a list of these maybe??
+    private Course addCourse;
+    private Course dropCourse;
 }
