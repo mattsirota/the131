@@ -1,7 +1,7 @@
-
 public class Course {
-    private String courseMajor;
+    private String subject;
     private String courseCode;
+    private int credits;
 
     public Course(String courseCode)
     {
@@ -9,7 +9,7 @@ public class Course {
         setCourseMajor();
     }
 
-    public void setCourseMajor()
+    public void setSubject()
     {
 
     }

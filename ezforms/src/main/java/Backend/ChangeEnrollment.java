@@ -1,4 +1,3 @@
-
 public class ChangeEnrollment {
     private int id;
 
