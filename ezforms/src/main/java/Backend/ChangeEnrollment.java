@@ -1,3 +1,11 @@
+import java.io.FileReader;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.*;
+
 public class ChangeEnrollment {
     private int id;
 
@@ -24,4 +32,9 @@ public class ChangeEnrollment {
     // make a list of these maybe??
     private Course addCourse;
     private Course dropCourse;
+
+    public ChangeEnrollment(JSONObject json)
+    {
+
+    }
 }
