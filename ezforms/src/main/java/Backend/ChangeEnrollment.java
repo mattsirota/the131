@@ -35,6 +35,30 @@ public class ChangeEnrollment {
 
     public ChangeEnrollment(JSONObject json)
     {
+        // test to make sure this works
+        // otherwise use JSONObject methods
+        // Object info = new JSONParser().parse(json);
 
+        lastName = (String) json.get("lastName");
+        firstName = (String) json.get("firstName");
+        middleName = (String) json.get("middleName");
+        studentId = (String) json.get("studentId");
+        streetAddr = (String) json.get("streetAddr");
+        cityAddr = (String) json.get("cityAddr");
+        stateAddr = (String) json.get("stateAddr");
+        zipCodeAddr = (String) json.get("zipCodeAddr");
+        undergrad = (boolean) json.get("undergrad");
+        ungradClass = (String) json.get("ungradClass");
+        graduate = (boolean) json.get("graduate");
+
+        winter = (boolean) json.get("winter");
+        spring = (boolean) json.get("spring");
+        summerI = (boolean) json.get("summerI");
+        summerII = (boolean) json.get("summerII");
+        fall = (boolean) json.get("fall");
+        year = (String) json.get("year");
+
+        //addCourse;
+        //dropCourse;
     }
 }
