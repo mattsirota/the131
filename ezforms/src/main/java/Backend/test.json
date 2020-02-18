@@ -15,5 +15,13 @@
   "summerI": false,
   "summerII": false,
   "fall": false,
-  "year": "20"
+  "year": "20",
+  "addSubject": ["MA","CPE"],
+  "addNumber": ["123","390"],
+  "addSection": ["B","A"],
+  "addCredits": ["2","3"],
+  "dropSubject": ["CAL"],
+  "dropNumber": ["105"],
+  "dropSection": ["C"],
+  "dropCredits": ["3"]
 }
