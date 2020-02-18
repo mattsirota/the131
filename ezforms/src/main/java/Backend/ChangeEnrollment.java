@@ -71,11 +71,11 @@ public class ChangeEnrollment {
         year = (String) json.get("year");
 
 
-        for(int i=0; i<jason.get("addSubject").length; i++) {
-            subjectsToAdd.add((String) jason.get("addSubject")[i]);
-            numbersToAdd.add((String) jason.get("addNumber")[i]);
-            sectionsToAdd.add((String) jason.get("addSection")[i]);
-            creditsToAdd.add((String) jason.get("addCredits")[i]);
+        for(int i=0; i<json.get("addSubject").length; i++) {
+            subjectsToAdd.add((String) json.get("addSubject")[i]);
+            numbersToAdd.add((String) json.get("addNumber")[i]);
+            sectionsToAdd.add((String) json.get("addSection")[i]);
+            creditsToAdd.add((String) json.get("addCredits")[i]);
         }
 
 
