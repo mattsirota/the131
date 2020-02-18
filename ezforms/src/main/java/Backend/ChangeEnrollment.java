@@ -1,6 +1,7 @@
 import java.io.FileReader;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -30,8 +31,19 @@ public class ChangeEnrollment {
     private boolean fall;
     private int year;
     // make a list of these maybe??
-    private Course addCourse;
-    private Course dropCourse;
+    private String addCourse;
+    private String dropCourse;
+
+    ArrayList subjectsToAdd = new ArrayList();
+    ArrayList numbersToAdd = new ArrayList();
+    ArrayList sectionsToAdd = new ArrayList();
+    ArrayList creditsToAdd = new ArrayList();
+
+    ArrayList subjectsToDrop = new ArrayList();
+    ArrayList numbersToDrop = new ArrayList();
+    ArrayList sectionsToDrop = new ArrayList();
+    ArrayList creditsToDrop = new ArrayList();
+
 
     public ChangeEnrollment(JSONObject json)
     {
@@ -58,7 +70,17 @@ public class ChangeEnrollment {
         fall = (boolean) json.get("fall");
         year = (String) json.get("year");
 
+
+        for(int i=0; i<jason.get("addSubject").length; i++) {
+            subjectsToAdd.add((String) jason.get("addSubject")[i]);
+            numbersToAdd.add((String) jason.get("addNumber")[i]);
+            sectionsToAdd.add((String) jason.get("addSection")[i]);
+            creditsToAdd.add((String) jason.get("addCredits")[i]);
+        }
+
+
         //addCourse;
         //dropCourse;
     }
 }
+
