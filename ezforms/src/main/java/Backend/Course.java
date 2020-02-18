@@ -1,3 +1,5 @@
+package main.java.Backend;
+
 public class Course {
     private String subject;
     private String courseCode;
@@ -7,6 +9,9 @@ public class Course {
     {
         this.courseCode = courseCode;
         setCourseMajor();
+    }
+
+    private void setCourseMajor() {
     }
 
     public void setSubject()

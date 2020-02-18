@@ -1,3 +1,5 @@
+package main.java.Backend;
+
 import java.io.FileReader;
 import java.util.Iterator;
 import java.util.Map;
@@ -19,7 +21,7 @@ public class ChangeEnrollment {
     private String stateAddr;
     private String zipCodeAddr;
     private boolean undergrad;
-    private int ungradClass;
+    private String ungradClass;
     private boolean graduate;
     private String __studentSignature;
     private String __signatureDate;
@@ -29,7 +31,7 @@ public class ChangeEnrollment {
     private boolean summerI;
     private boolean summerII;
     private boolean fall;
-    private int year;
+    private String year;
     // make a list of these maybe??
     private String addCourse;
     private String dropCourse;
@@ -70,12 +72,13 @@ public class ChangeEnrollment {
         fall = (boolean) json.get("fall");
         year = (String) json.get("year");
 
+        JSONArray addSubjectArray = (JSONArray) json.get("addSubject");
 
-        for(int i=0; i<json.get("addSubject").length; i++) {
-            subjectsToAdd.add((String) json.get("addSubject")[i]);
-            numbersToAdd.add((String) json.get("addNumber")[i]);
-            sectionsToAdd.add((String) json.get("addSection")[i]);
-            creditsToAdd.add((String) json.get("addCredits")[i]);
+        for(int i=0; i<addSubjectArray.size(); i++) {
+            subjectsToAdd.add((String) addSubjectArray.get(i));
+            numbersToAdd.add(json.get("addNumber"));
+            sectionsToAdd.add(json.get("addSection"));
+            creditsToAdd.add(json.get("addCredits"));
         }
 
 
