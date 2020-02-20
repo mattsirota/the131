@@ -36,15 +36,15 @@ public class ChangeEnrollment {
     private String addCourse;
     private String dropCourse;
 
-    ArrayList subjectsToAdd = new ArrayList();
-    ArrayList numbersToAdd = new ArrayList();
-    ArrayList sectionsToAdd = new ArrayList();
-    ArrayList creditsToAdd = new ArrayList();
+    ArrayList<String> subjectsToAdd = new ArrayList<>();
+    ArrayList<String> numbersToAdd = new ArrayList<>();
+    ArrayList<String> sectionsToAdd = new ArrayList<>();
+    ArrayList<String> creditsToAdd = new ArrayList<>();
 
-    ArrayList subjectsToDrop = new ArrayList();
-    ArrayList numbersToDrop = new ArrayList();
-    ArrayList sectionsToDrop = new ArrayList();
-    ArrayList creditsToDrop = new ArrayList();
+    ArrayList<String> subjectsToDrop = new ArrayList<>();
+    ArrayList<String> numbersToDrop = new ArrayList<>();
+    ArrayList<String> sectionsToDrop = new ArrayList<>();
+    ArrayList<String> creditsToDrop = new ArrayList<>();
 
 
     public ChangeEnrollment(JSONObject json)
@@ -77,12 +77,23 @@ public class ChangeEnrollment {
         JSONArray addSectionArray = (JSONArray) json.get("addSection");
         JSONArray addCreditsArray = (JSONArray) json.get("addCredits");
 
+        JSONArray dropSubjectArray = (JSONArray) json.get("dropSubject");
+        JSONArray dropNumberArray = (JSONArray) json.get("dropNumber");
+        JSONArray dropSectionArray = (JSONArray) json.get("dropSection");
+        JSONArray dropCreditsArray = (JSONArray) json.get("dropCredits");
 
         for(int i=0; i<addSubjectArray.size(); i++) {
             subjectsToAdd.add((String) addSubjectArray.get(i));
             numbersToAdd.add((String) addNumberArray.get(i));
             sectionsToAdd.add((String) addSectionArray.get(i));
             creditsToAdd.add((String) addCreditsArray.get(i));
+        }
+
+        for(int i=0; i<addSubjectArray.size(); i++) {
+            subjectsToDrop.add((String) dropSubjectArray.get(i));
+            numbersToDrop.add((String) dropNumberArray.get(i));
+            sectionsToDrop.add((String) dropSectionArray.get(i));
+            creditsToDrop.add((String) dropCreditsArray.get(i));
         }
     }
 
@@ -114,6 +125,13 @@ public class ChangeEnrollment {
             System.out.print(numbersToAdd.get(i) + "-");
             System.out.print(sectionsToAdd.get(i) + " ");
             System.out.println(creditsToAdd.get(i));
+        }
+
+        for(int i=0; i<subjectsToDrop.size(); i++) {
+            System.out.print(subjectsToDrop.get(i));
+            System.out.print(numbersToDrop.get(i) + "-");
+            System.out.print(sectionsToDrop.get(i) + " ");
+            System.out.println(creditsToDrop.get(i));
         }
     }
 }
