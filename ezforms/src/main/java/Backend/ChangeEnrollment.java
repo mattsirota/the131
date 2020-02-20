@@ -1,9 +1,12 @@
 package main.java.Backend;
 
 import java.io.FileReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -98,6 +101,7 @@ public class ChangeEnrollment {
     }
 
     public void signForm(){
+        __signatureDate = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
 
     }
 
