@@ -12,5 +12,6 @@ public class Test
         Object obj = new JSONParser().parse(new FileReader("ezforms/test.json"));
         JSONObject json = (JSONObject) obj;
         ChangeEnrollment addDrop = new ChangeEnrollment(json);
+        addDrop.printInfo();
     }
 }

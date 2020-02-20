@@ -73,17 +73,48 @@ public class ChangeEnrollment {
         year = (String) json.get("year");
 
         JSONArray addSubjectArray = (JSONArray) json.get("addSubject");
+        JSONArray addNumberArray = (JSONArray) json.get("addNumber");
+        JSONArray addSectionArray = (JSONArray) json.get("addSection");
+        JSONArray addCreditsArray = (JSONArray) json.get("addCredits");
+
 
         for(int i=0; i<addSubjectArray.size(); i++) {
             subjectsToAdd.add((String) addSubjectArray.get(i));
-            numbersToAdd.add(json.get("addNumber"));
-            sectionsToAdd.add(json.get("addSection"));
-            creditsToAdd.add(json.get("addCredits"));
+            numbersToAdd.add((String) addNumberArray.get(i));
+            sectionsToAdd.add((String) addSectionArray.get(i));
+            creditsToAdd.add((String) addCreditsArray.get(i));
         }
+    }
 
+    public void signForm(){
 
-        //addCourse;
-        //dropCourse;
+    }
+
+    public void printInfo() {
+        System.out.println(lastName);
+        System.out.println(firstName);
+        System.out.println(middleName);
+        System.out.println(studentId);
+        System.out.println(streetAddr);
+        System.out.println(cityAddr);
+        System.out.println(stateAddr);
+        System.out.println(zipCodeAddr);
+        System.out.println(undergrad);
+        System.out.println(ungradClass);
+        System.out.println(graduate);
+        System.out.println(winter);
+        System.out.println(spring);
+        System.out.println(summerI);
+        System.out.println(summerII);
+        System.out.println(fall);
+        System.out.println(year);
+
+        for(int i=0; i<subjectsToAdd.size(); i++) {
+            System.out.print(subjectsToAdd.get(i));
+            System.out.print(numbersToAdd.get(i) + "-");
+            System.out.print(sectionsToAdd.get(i) + " ");
+            System.out.println(creditsToAdd.get(i));
+        }
     }
 }
 
