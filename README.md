@@ -15,7 +15,7 @@
       - Kyle
       - Dan
     - Java Crypto
-      - Dan
+      - Kyle
       - Matt
  - Front-end formatting
     - Making the forms comprehensive
