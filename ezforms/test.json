@@ -15,7 +15,7 @@
   "summerI": false,
   "summerII": false,
   "fall": false,
-  "year": "20",
+  "year": 20,
   "addSubject": ["MA","CPE"],
   "addNumber": ["123","390"],
   "addSection": ["B","A"],

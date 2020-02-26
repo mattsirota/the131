@@ -24,21 +24,24 @@ public class ChangeEnrollment {
     private String stateAddr;
     private String zipCodeAddr;
     private boolean undergrad;
-    private String ungradClass;
+    private int ungradClass;
     private boolean graduate;
     private String __studentSignature;
     private String __signatureDate;
 
+    // enumerate. not individual booleans
     private boolean winter;
     private boolean spring;
     private boolean summerI;
     private boolean summerII;
     private boolean fall;
+    // int
     private String year;
     // make a list of these maybe??
-    private String addCourse;
-    private String dropCourse;
+    //private String addCourse;
+    //private String dropCourse;
 
+    // course object. make list of that instead
     ArrayList<String> subjectsToAdd = new ArrayList<>();
     ArrayList<String> numbersToAdd = new ArrayList<>();
     ArrayList<String> sectionsToAdd = new ArrayList<>();
@@ -50,6 +53,9 @@ public class ChangeEnrollment {
     ArrayList<String> creditsToDrop = new ArrayList<>();
 
 
+    // define exceptions and throw for form failing
+    // if form is bad just say what field is bad if possible
+    // generic exception for a form
     public ChangeEnrollment(JSONObject json)
     {
         // test to make sure this works
@@ -65,9 +71,10 @@ public class ChangeEnrollment {
         stateAddr = (String) json.get("stateAddr");
         zipCodeAddr = (String) json.get("zipCodeAddr");
         undergrad = (boolean) json.get("undergrad");
-        ungradClass = (String) json.get("ungradClass");
+        ungradClass = (int) json.get("ungradClass");
         graduate = (boolean) json.get("graduate");
 
+        //
         winter = (boolean) json.get("winter");
         spring = (boolean) json.get("spring");
         summerI = (boolean) json.get("summerI");
@@ -105,6 +112,13 @@ public class ChangeEnrollment {
 
     }
 
+    // public String toString() instead
+    // strinbuilder is not thread safe
+    // StringBuilder b = new StringBuilder(1024)  allocate appoximate size to speed up
+    // b.append(lastName).append('\n').append(firstName).append()
+    // return b.toString()
+
+    // get rid of this
     public void printInfo() {
         System.out.println(lastName);
         System.out.println(firstName);
