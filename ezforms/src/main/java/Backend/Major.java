@@ -1,3 +1,5 @@
+package main.java.Backend;
+
 public class Major{
     private String majorName;
     // required courses
