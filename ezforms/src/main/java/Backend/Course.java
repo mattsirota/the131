@@ -18,4 +18,11 @@ public class Course {
     {
 
     }
+
+    public String toString()
+    {
+        StringBuilder b = new StringBuilder(1024);
+        b.append(subject).append(number).append(" ").append(section).append(": ").append(credits).append(" credits\n");
+        return b.toString();
+    }
 }

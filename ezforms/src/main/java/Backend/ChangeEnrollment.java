@@ -36,7 +36,7 @@ public class ChangeEnrollment {
 
     // course object. make list of that instead
     ArrayList<Course> addCourses = new ArrayList<>();
-    ArrayList<String> dropCourses = new ArrayList<>();
+    ArrayList<Course> dropCourses = new ArrayList<>();
 
     // define exceptions and throw for form failing
     // if form is bad just say what field is bad if possible
@@ -51,36 +51,25 @@ public class ChangeEnrollment {
         cityAddr = (String) json.get("cityAddr");
         stateAddr = (String) json.get("stateAddr");
         zipCodeAddr = (String) json.get("zipCodeAddr");
-        isUndergrad = (boolean) json.get("undergrad");
-        graduatingYear = (int) json.get("ungradClass");
+        isUndergrad = (boolean) json.get("isUndergrad");
+        graduatingYear = ((Long) json.get("graduatingYear")).intValue();
 
-        semester = (Semester)json.get("semester");
-        year = (int) json.get("year");
+        semester = Semester.valueOf((String)json.get("semester"));
+        year = ((Long) json.get("year")).intValue();
 
-        JSONArray addSubjectArray = (JSONArray) json.get("addSubject");
-        JSONArray addNumberArray = (JSONArray) json.get("addNumber");
-        JSONArray addSectionArray = (JSONArray) json.get("addSection");
-        JSONArray addCreditsArray = (JSONArray) json.get("addCredits");
+        JSONArray addJSONCourses = (JSONArray) json.get("addCourse");
+        JSONArray dropJSONCourses = (JSONArray) json.get("dropCourse");
 
-        JSONArray dropSubjectArray = (JSONArray) json.get("dropSubject");
-        JSONArray dropNumberArray = (JSONArray) json.get("dropNumber");
-        JSONArray dropSectionArray = (JSONArray) json.get("dropSection");
-        JSONArray dropCreditsArray = (JSONArray) json.get("dropCredits");
-
-        /*
-        for(int i=0; i<addSubjectArray.size(); i++) {
-            subjectsToAdd.add((String) addSubjectArray.get(i));
-            numbersToAdd.add((String) addNumberArray.get(i));
-            sectionsToAdd.add((String) addSectionArray.get(i));
-            creditsToAdd.add((String) addCreditsArray.get(i));
+        for(int i=0; i<addJSONCourses.size(); i++) {
+            JSONObject curCourse = (JSONObject)addJSONCourses.get(i);
+            addCourses.add(parseCourse(curCourse));
         }
 
-        for(int i=0; i<addSubjectArray.size(); i++) {
-            subjectsToDrop.add((String) dropSubjectArray.get(i));
-            numbersToDrop.add((String) dropNumberArray.get(i));
-            sectionsToDrop.add((String) dropSectionArray.get(i));
-            creditsToDrop.add((String) dropCreditsArray.get(i));
-        }*/
+        for(int i=0; i<dropJSONCourses.size(); i++)
+        {
+            JSONObject curCourse = (JSONObject)dropJSONCourses.get(i);
+            dropCourses.add(parseCourse(curCourse));
+        }
     }
 
     /*public void signForm(){
@@ -88,19 +77,37 @@ public class ChangeEnrollment {
 
     }*/
 
-    // public String toString() instead
-    // strinbuilder is not thread safe
-    // StringBuilder b = new StringBuilder(1024)  allocate appoximate size to speed up
-    // b.append(lastName).append('\n').append(firstName).append()
-    // return b.toString()
+    public Course parseCourse(JSONObject course) {
+        String subject, number, section;
+        int credits;
+
+        subject = (String)course.get("subject");
+        number = (String)course.get("number");
+        section = (String)course.get("section");
+        credits = ((Long)course.get("credits")).intValue();
+
+        return new Course(subject,number,section,credits);
+    }
 
     public String toString() {
         StringBuilder b = new StringBuilder(1024);
         b.append(lastName).append(", ").append(firstName).append(' ').append(middleName).append('\n');
-        b.append(studentId).append('\n');
+        b.append("ID: ").append(studentId).append('\n');
         b.append(streetAddr).append(", ").append(cityAddr).append(' ').append(stateAddr).append(' ').append(zipCodeAddr).append('\n');
         b.append("Undergrad? ").append(isUndergrad).append(" Graduating in ").append(graduatingYear).append('\n');
         b.append("Current semester: ").append(semester).append(' ').append(year).append('\n');
+
+        b.append("\nAdding courses:\n");
+        for(int i=0; i<addCourses.size(); i++)
+        {
+            b.append(addCourses.get(i).toString());
+        }
+
+        b.append("\nDropping courses:\n");
+        for(int i=0; i<dropCourses.size(); i++)
+        {
+            b.append(dropCourses.get(i).toString());
+        }
 
         return b.toString();
     }
