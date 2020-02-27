@@ -13,6 +13,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
 
 public class ChangeEnrollment {
+   enum Semester {
+       WINTER, SPRING, SUMMER_ONE, SUMMER_TWO, FALL
+   }
+
     private int id;
 
     private String lastName;
@@ -23,45 +27,22 @@ public class ChangeEnrollment {
     private String cityAddr;
     private String stateAddr;
     private String zipCodeAddr;
-    private boolean undergrad;
-    private int ungradClass;
-    private boolean graduate;
-    private String __studentSignature;
-    private String __signatureDate;
-
-    // enumerate. not individual booleans
-    private boolean winter;
-    private boolean spring;
-    private boolean summerI;
-    private boolean summerII;
-    private boolean fall;
-    // int
-    private String year;
-    // make a list of these maybe??
-    //private String addCourse;
-    //private String dropCourse;
+    private boolean isUndergrad;
+    private int graduatingYear;
+    private Semester semester;
+    private int year;
+    private String studentSignature;
+    private String signatureDate;
 
     // course object. make list of that instead
-    ArrayList<String> subjectsToAdd = new ArrayList<>();
-    ArrayList<String> numbersToAdd = new ArrayList<>();
-    ArrayList<String> sectionsToAdd = new ArrayList<>();
-    ArrayList<String> creditsToAdd = new ArrayList<>();
-
-    ArrayList<String> subjectsToDrop = new ArrayList<>();
-    ArrayList<String> numbersToDrop = new ArrayList<>();
-    ArrayList<String> sectionsToDrop = new ArrayList<>();
-    ArrayList<String> creditsToDrop = new ArrayList<>();
-
+    ArrayList<Course> addCourses = new ArrayList<>();
+    ArrayList<String> dropCourses = new ArrayList<>();
 
     // define exceptions and throw for form failing
     // if form is bad just say what field is bad if possible
     // generic exception for a form
     public ChangeEnrollment(JSONObject json)
     {
-        // test to make sure this works
-        // otherwise use JSONObject methods
-        // Object info = new JSONParser().parse(json);
-
         lastName = (String) json.get("lastName");
         firstName = (String) json.get("firstName");
         middleName = (String) json.get("middleName");
@@ -70,17 +51,11 @@ public class ChangeEnrollment {
         cityAddr = (String) json.get("cityAddr");
         stateAddr = (String) json.get("stateAddr");
         zipCodeAddr = (String) json.get("zipCodeAddr");
-        undergrad = (boolean) json.get("undergrad");
-        ungradClass = (int) json.get("ungradClass");
-        graduate = (boolean) json.get("graduate");
+        isUndergrad = (boolean) json.get("undergrad");
+        graduatingYear = (int) json.get("ungradClass");
 
-        //
-        winter = (boolean) json.get("winter");
-        spring = (boolean) json.get("spring");
-        summerI = (boolean) json.get("summerI");
-        summerII = (boolean) json.get("summerII");
-        fall = (boolean) json.get("fall");
-        year = (String) json.get("year");
+        semester = (Semester)json.get("semester");
+        year = (int) json.get("year");
 
         JSONArray addSubjectArray = (JSONArray) json.get("addSubject");
         JSONArray addNumberArray = (JSONArray) json.get("addNumber");
@@ -92,6 +67,7 @@ public class ChangeEnrollment {
         JSONArray dropSectionArray = (JSONArray) json.get("dropSection");
         JSONArray dropCreditsArray = (JSONArray) json.get("dropCredits");
 
+        /*
         for(int i=0; i<addSubjectArray.size(); i++) {
             subjectsToAdd.add((String) addSubjectArray.get(i));
             numbersToAdd.add((String) addNumberArray.get(i));
@@ -104,13 +80,13 @@ public class ChangeEnrollment {
             numbersToDrop.add((String) dropNumberArray.get(i));
             sectionsToDrop.add((String) dropSectionArray.get(i));
             creditsToDrop.add((String) dropCreditsArray.get(i));
-        }
+        }*/
     }
 
-    public void signForm(){
+    /*public void signForm(){
         __signatureDate = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
 
-    }
+    }*/
 
     // public String toString() instead
     // strinbuilder is not thread safe
@@ -118,39 +94,15 @@ public class ChangeEnrollment {
     // b.append(lastName).append('\n').append(firstName).append()
     // return b.toString()
 
-    // get rid of this
-    public void printInfo() {
-        System.out.println(lastName);
-        System.out.println(firstName);
-        System.out.println(middleName);
-        System.out.println(studentId);
-        System.out.println(streetAddr);
-        System.out.println(cityAddr);
-        System.out.println(stateAddr);
-        System.out.println(zipCodeAddr);
-        System.out.println(undergrad);
-        System.out.println(ungradClass);
-        System.out.println(graduate);
-        System.out.println(winter);
-        System.out.println(spring);
-        System.out.println(summerI);
-        System.out.println(summerII);
-        System.out.println(fall);
-        System.out.println(year);
+    public String toString() {
+        StringBuilder b = new StringBuilder(1024);
+        b.append(lastName).append(", ").append(firstName).append(' ').append(middleName).append('\n');
+        b.append(studentId).append('\n');
+        b.append(streetAddr).append(", ").append(cityAddr).append(' ').append(stateAddr).append(' ').append(zipCodeAddr).append('\n');
+        b.append("Undergrad? ").append(isUndergrad).append(" Graduating in ").append(graduatingYear).append('\n');
+        b.append("Current semester: ").append(semester).append(' ').append(year).append('\n');
 
-        for(int i=0; i<subjectsToAdd.size(); i++) {
-            System.out.print(subjectsToAdd.get(i));
-            System.out.print(numbersToAdd.get(i) + "-");
-            System.out.print(sectionsToAdd.get(i) + " ");
-            System.out.println(creditsToAdd.get(i));
-        }
-
-        for(int i=0; i<subjectsToDrop.size(); i++) {
-            System.out.print(subjectsToDrop.get(i));
-            System.out.print(numbersToDrop.get(i) + "-");
-            System.out.print(sectionsToDrop.get(i) + " ");
-            System.out.println(creditsToDrop.get(i));
-        }
+        return b.toString();
     }
 }
 
