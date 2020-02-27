@@ -2,16 +2,16 @@ package main.java.Backend;
 
 public class Course {
     private String subject;
-    private String courseCode;
+    private String number;
+    private String section;
     private int credits;
 
-    public Course(String courseCode)
+    public Course(String subject, String number, String section, int credits)
     {
-        this.courseCode = courseCode;
-        setCourseMajor();
-    }
-
-    private void setCourseMajor() {
+        this.subject = subject;
+        this.number = number;
+        this.section = section;
+        this.credits = credits;
     }
 
     public void setSubject()

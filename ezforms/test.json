@@ -8,7 +8,7 @@
   "stateAddr": "NJ",
   "zipCodeAddr": "07030",
   "undergrad": true,
-  "ungradClass": "20",
+  "ungradClass": 20,
   "graduate": false,
   "winter": false,
   "spring": true,
@@ -16,12 +16,11 @@
   "summerII": false,
   "fall": false,
   "year": 20,
-  "addSubject": ["MA","CPE"],
-  "addNumber": ["123","390"],
-  "addSection": ["B","A"],
-  "addCredits": ["2","3"],
-  "dropSubject": ["CAL"],
-  "dropNumber": ["105"],
-  "dropSection": ["C"],
-  "dropCredits": ["3"]
+  "addCourse": [
+    {"subject": "MA", "number": "123", "section": "B", "credits": 2},
+    {"subject": "CPE", "number": "390", "section": "A", "credits": 3}
+  ],
+  "dropCourse": [
+    {"subject": "CAL", "number": "105", "section": "C", "credits": 3}
+  ]
 }

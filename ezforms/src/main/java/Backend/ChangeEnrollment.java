@@ -35,8 +35,7 @@ public class ChangeEnrollment {
     private boolean summerI;
     private boolean summerII;
     private boolean fall;
-    // int
-    private String year;
+    private int year;
     // make a list of these maybe??
     //private String addCourse;
     //private String dropCourse;
@@ -80,7 +79,7 @@ public class ChangeEnrollment {
         summerI = (boolean) json.get("summerI");
         summerII = (boolean) json.get("summerII");
         fall = (boolean) json.get("fall");
-        year = (String) json.get("year");
+        year = (int) json.get("year");
 
         JSONArray addSubjectArray = (JSONArray) json.get("addSubject");
         JSONArray addNumberArray = (JSONArray) json.get("addNumber");
