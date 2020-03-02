@@ -6,35 +6,35 @@
 
 <head>
     <h1>EZ Forms</h1>
+    <p>Welcome to EZ forms here you can set up your study plan and create a change of enrollment form</p>
 
-    <p>Welcome to EZ forms here you can set up your study plan and create your change of enrollment</p>
 </head>
 
 <body>
-<div class = "ChooseForm">
-    <a href = "#">Accademic Schedule</a>
+    <div class = "ChooseForm">
+        <a href = "#">Accademic Schedule</a>
+        <br/>
+        <a href = "C:\Users\Daniel\IdeaProjects\the131\Schedule\Frontend\ChangeOfEnrollment.html">Change of Enrollment</a>
+    </div>
     <br/>
-    <a href = "C:\Users\Daniel\IdeaProjects\the131\Schedule\Frontend\ChangeOfEnrollment.html">Change of Enrollment</a>
-</div>
-<br/>
-<br/>
+    <br/>
+    <table>
+        <form id = "studyPlanForm" action = "">
 
-    <form>
-        <td>
             <strong>First Name</strong>
-            <input type = "text" name = "firstName">
+            <input type = "text" name = "firstName" id = "firstName">
             <br/>
 
             <strong>Last Name</strong>
-            <input type = "text" name = "lastName">
+            <input type = "text" name = "lastName" id = "lastName">
             <br/>
 
             <strong>Campus Wide ID</strong>
-            <input type = "text" name = "campusWideID">
+            <input type = "text" name = "campusWideID" id = "campusWideID">
             <br/>
 
             <strong>Anticipated Graduation</strong>
-            <select name = "anticipatedGraduation">
+            <select name = "anticipatedGraduation" id = "anticipatedGraduation">
                 <option value = "2020SpringGraduation">2020 Spring</option>
                 <option value = "2020SummerGraduation">2020 Summer</option>
                 <option value = "2020FallGraduation">2020 Fall</option>
@@ -50,14 +50,15 @@
             <br/>
 
             <strong>Plan Type</strong>
-            <select name = "planType">
+            <select name = "planType" id = "planType">
                 <option value = "studyPlan">Study Plan</option>
                 <option value = "applicationForCandidacy">Application for Candidacy</option>
             </select>
-            
+            <br/>
+
 
             <strong>Int'l Student OPT</strong>
-            <select name = "internationalStudent">
+            <select name = "internationalStudent" id = "internationalStudent">
                 <option value = "selectOPT">-select-</option>
                 <option value = "yesInternationalOPT">Yes</option>
                 <option value = "noInternationalOPT">No</option>
@@ -65,14 +66,14 @@
             <br/>
 
             <strong>Select Degree</strong>
-            <select name = "degree">
+            <select name = "degree" id = "degree">
                 <option value = "ME">ME</option>
                 <option value = "MS">MS</option>
             </select>
             <br/>
 
             <strong>Select Major</strong>
-            <select>
+            <select name = "major" id = "major">
                 <option value = "AAI">AAI</option>
                 <option value = "EE">EE</option>
                 <option value = "CPE">CPE</option>
@@ -80,7 +81,7 @@
             <br/>
 
             <strong>Select Concentration</strong>
-            <select>
+            <select name = "concentration" id = "concentration">
                 <option value = "electricalEngineering">Electrical Engineering</option>
                 <option value = "computerEngineering">Computer Engineering</option>
                 <option value = "dataEngineering">Data Engineering</option>
@@ -90,9 +91,61 @@
                 <option value = "mechanicalEngineering">Mechanical Engineering</option>
                 <option value = "AIInDesignAndConstruction">AI in Design and Construction </option>
             </select>
+            <br/>
+            <input id = "submitStudyPlanInfoButton" type = button value = "Submit">
+            <script>
+                class StudyPlanInfo{
+                    constructor(firstName, lastName, campusWideID, anticipatedGraduation,planType,internationalStudent,degree, major,concentration) {
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                        this.campusWideID = campusWideID;
+                        this.anticipatedGraduation = anticipatedGraduation;
+                        this.planType = planType;
+                        this.internationalStudent = internationalStudent
+                        this.degree = degree;
+                        this.major = major;
+                        this.concentration = concentration;
+                    }
+                    proveExistance(){
+                        alert(this.firstName);
+                        alert(this.lastName);
+                        alert(this.campusWideID);
+                        alert(this.anticipatedGraduation);
+                        alert(this.planType);
+                        alert(this.internationalStudent);
+                        alert(this.degree);
+                        alert(this.major);
+                        alert(this.concentration);
+                    }
 
-        </td>
-    </form>
+                }
+
+                function submitStudyPlanInfo()
+                {
+                    alert("Creating your study plan");
+                    var firstName =  document.getElementById('firstName').value;
+                    var lastName = document.getElementById('lastName').value;
+                    var campusWideID = document.getElementById('campusWideID').value;
+                    var anticipatedGraduation = document.getElementById('anticipatedGraduation').value;
+                    var planType = document.getElementById('planType').value;
+                    var internationalStudent = document.getElementById('internationalStudent').value;
+                    var degree = document.getElementById('degree').value;
+                    var major = document.getElementById('major').value;
+                    var concentration = document.getElementById('concentration').value;
+
+                    studyPlanObj = new StudyPlanInfo(firstName,lastName,campusWideID,anticipatedGraduation,planType, internationalStudent,major,concentration);
+                    //studyPlanObj.proveExistance();
+
+                    var studyPlanObjJSON = JSON.stringify(studyPlanObj);
+                    console.log(typeof(studyPlanObjJSON));
+                    console.log(studyPlanObjJSON);
+                }
+                document.getElementById('submitStudyPlanInfoButton').addEventListener('click',submitStudyPlanInfo);
+
+            </script>
+
+        </form>
+    </table>
 </body>
 
 </html>

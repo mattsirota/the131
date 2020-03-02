@@ -1,0 +1,139 @@
+<!--This is the Change of Enrollment Layout -DB -->
+<html>
+
+<head>
+    <h1>EZ Forms</h1>
+
+    <p>Welcome to EZ forms here you can set up your study plan and create your change of enrollment</p>
+</head>
+
+<body>
+	<div class = "ChooseForm">
+		<a href = "C:\Users\Daniel\IdeaProjects\the131\Schedule\Frontend\layout.html">Accademic Schedule</a>
+		<br/>
+		<a href = "#">Change of Enrollment</a>
+	</div>
+	<br/>
+	<br/>
+
+<form>
+    <td>
+        <strong>First Name</strong>
+        <input type = "text" name = "firstName" id = "firstName">
+        <br/>
+
+        <strong>Last Name</strong>
+        <input type = "text" name = "lastName" id = "lastName">
+        <br/>
+
+        <strong>Middle Name</strong>
+        <input type = "text" name = "middleName" id = "middleName">
+        <br/>
+
+        <strong>Campus Wide ID</strong>
+        <input type = "text" name = "campusWideID" id = "campusWideID">
+        <br/>
+
+        <strong>Mailing Address:</strong>
+        <br/>
+
+        <strong>Street Address</strong>
+        <input type = "text" name = "streetAddress" id = "streetAddress">
+        <br/>
+
+        <strong>City</strong>
+        <input type = "text" name = "city" id = "city">
+        <br/>
+
+        <strong>State</strong>
+        <input type = "text" name = "state" id = "state">
+        <br/>
+
+        <strong>Zip Code</strong>
+        <input type = "text" name = "zipCode" id = "zipCode">
+        <br/>
+
+        <strong>Anticipated Graduation</strong>
+        <select name = "anticipatedGraduation" id = "anticipatedGraduation">
+            <option value = "2020SpringGraduation">2020 Spring</option>
+            <option value = "2020SummerGraduation">2020 Summer</option>
+            <option value = "2020FallGraduation">2020 Fall</option>
+
+            <option value = "2021SpringGraduation">2021 Spring</option>
+            <option value = "2021SummerGraduation">2021 Summer</option>
+            <option value = "2021FallGraduation">2021 Fall</option>
+
+            <option value = "2022SpringGraduation">2022 Spring</option>
+            <option value = "2022SummerGraduation">2022 Summer</option>
+            <option value = "2022FallGraduation">2022 Fall</option>
+        </select>
+        <br/>
+
+        <strong>Courses Adding: </strong>
+        <input type = "text" name = "courseAdd" id = "courseAdd">
+        <small>Separate Courses With a comma</small>
+        <br/>
+
+        <strong>Courses Dropping: </strong>
+        <input type = "text" name = "courseDrop" id = "courseDrop">
+        <small>Separate Courses With a comma</small>
+        <br/>
+
+        <input id = "submitChangeOfEnrollmentButton" type = button value = "Submit">
+        <Script>
+            class ChangeOfEnrollmentInfo{
+                constructor(firstName,lastName,middleName,campusWideID,streetAddress,city,state,zipCode,anticipatedGraduation, courseAdd,courseDrop){
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.middleName = middleName;
+                    this.campusWideID = campusWideID;
+                    this.streetAddress = streetAddress;
+                    this.city = city;
+                    this.state = state;
+                    this.zipCode = zipCode;
+                    this.anticipatedGraduation = anticipatedGraduation;
+                    this.courseAdd = courseAdd;
+                    this.courseDrop = courseDrop;
+                }
+                proveExistance(){
+					alert(this.firstName);
+					alert(this.lastName);
+					alert(this.middleName);
+					alert(this.campusWideID);
+					alert(this.streetAddress);
+					alert(this.city);
+					alert(this.state);
+					alert(this.zipCode);
+					alert(this.anticipatedGraduation);
+					alert(this.courseAdd);
+					alert(this.courseDrop);
+                }
+            }
+            function submitChangeOfEnrollmentInfo()
+            {
+                var firstName = document.getElementById('firstName').value;
+				var lastName = document.getElementById('lastName').value;
+				var middleName = document.getElementById('middleName').value;
+				var campusWideID = document.getElementById('campusWideID').value;
+				var streetAddress = document.getElementById('streetAddress').value;
+				var city = document.getElementById('city').value;
+				var state = document.getElementById('state').value;
+				var zipCode = document.getElementById('zipCode').value;
+				var anticipatedGraduation = document.getElementById('anticipatedGraduation').value;
+				var courseAdd = document.getElementById('courseAdd').value;
+				var courseDrop = document.getElementById('courseDrop').value;
+				
+				changeOfEnrollmentObj = new ChangeOfEnrollmentInfo(firstName,lastName,middleName, campusWideID, streetAddress, city, state, zipCode, anticipatedGraduation, courseAdd, courseDrop);
+				
+				//changeOfEnrollmentObj.proveExistance();
+				var changeOfEnrollmentObjJSON = JSON.stringify(changeOfEnrollmentObj);
+				
+				console.log(typeof(changeOfEnrollmentObjJSON));
+				console.log(changeOfEnrollmentObjJSON);
+			}	
+            document.getElementById('submitChangeOfEnrollmentButton').addEventListener('click',submitChangeOfEnrollmentInfo);
+        </Script>
+
+    </td>
+</form>
+</body>
