@@ -22,13 +22,13 @@ public class ChangeEnrollment {
     private String lastName;
     private String firstName;
     private String middleName;
-    private String studentId;
-    private String streetAddr;
-    private String cityAddr;
-    private String stateAddr;
-    private String zipCodeAddr;
+    private String campusWideID;
+    private String streetAddress;
+    private String city;
+    private String state;
+    private String zipCode;
     private boolean isUndergrad;
-    private int graduatingYear;
+    private int anticipatedGraduation;
     private Semester semester;
     private int year;
     private String studentSignature;
@@ -46,13 +46,13 @@ public class ChangeEnrollment {
         lastName = (String) json.get("lastName");
         firstName = (String) json.get("firstName");
         middleName = (String) json.get("middleName");
-        studentId = (String) json.get("studentId");
-        streetAddr = (String) json.get("streetAddr");
-        cityAddr = (String) json.get("cityAddr");
-        stateAddr = (String) json.get("stateAddr");
-        zipCodeAddr = (String) json.get("zipCodeAddr");
+        campusWideID = (String) json.get("campusWideID");
+        streetAddress = (String) json.get("streetAddress");
+        city = (String) json.get("city");
+        state = (String) json.get("state");
+        zipCode = (String) json.get("zipCode");
         isUndergrad = (boolean) json.get("isUndergrad");
-        graduatingYear = ((Long) json.get("graduatingYear")).intValue();
+        anticipatedGraduation = ((Long) json.get("anticipatedGraduation")).intValue();
 
         semester = Semester.valueOf((String)json.get("semester"));
         year = ((Long) json.get("year")).intValue();
@@ -92,9 +92,9 @@ public class ChangeEnrollment {
     public String toString() {
         StringBuilder b = new StringBuilder(1024);
         b.append(lastName).append(", ").append(firstName).append(' ').append(middleName).append('\n');
-        b.append("ID: ").append(studentId).append('\n');
-        b.append(streetAddr).append(", ").append(cityAddr).append(' ').append(stateAddr).append(' ').append(zipCodeAddr).append('\n');
-        b.append("Undergrad? ").append(isUndergrad).append(" Graduating in ").append(graduatingYear).append('\n');
+        b.append("ID: ").append(campusWideID).append('\n');
+        b.append(streetAddress).append(", ").append(city).append(' ').append(state).append(' ').append(zipCode).append('\n');
+        b.append("Undergrad? ").append(isUndergrad).append(" Graduating in ").append(anticipatedGraduation).append('\n');
         b.append("Current semester: ").append(semester).append(' ').append(year).append('\n');
 
         b.append("\nAdding courses:\n");
