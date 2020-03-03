@@ -5,94 +5,114 @@
 <html>
 
 <head>
+
     <h1>EZ Forms</h1>
     <p>Welcome to EZ forms here you can set up your study plan and create a change of enrollment form</p>
-
+    <link rel="stylesheet" href="css/styleLayout.css">
 </head>
 
 <body>
-    <div class = "ChooseForm">
-        <a href = "#">Accademic Schedule</a>
-        <br/>
-        <a href = "C:\Users\Daniel\IdeaProjects\the131\Schedule\Frontend\ChangeOfEnrollment.html">Change of Enrollment</a>
-    </div>
+    <table>
+        <tr>
+            <td><div class = "ChooseForm">
+                <a href = "#">Accademic Schedule</a>
+                <br/>
+                <a href = "C:\Users\Daniel\IdeaProjects\the131\Schedule\Frontend\ChangeOfEnrollment.html">Change of Enrollment</a>
+            </div></td>
+            <td>
+                <a href = "https://shibboleth.stevens.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s1">
+                    <img src="stevensLogo.png" alt="Stevens_Logo" width = "200" height="200">
+                </a>
+            </td>
+        </tr>
+    </table>
+
     <br/>
     <br/>
     <table>
         <form id = "studyPlanForm" action = "">
 
-            <strong>First Name</strong>
-            <input type = "text" name = "firstName" id = "firstName">
-            <br/>
+            <tr>
+                <td> <strong>First Name</strong></td>
+                <td> <input type = "text" name = "firstName" id = "firstName"></td>
+            </tr>
 
-            <strong>Last Name</strong>
-            <input type = "text" name = "lastName" id = "lastName">
-            <br/>
+            <tr>
+                <td> <strong>Last Name</strong></td>
+                <td> <input type = "text" name = "lastName" id = "lastName"></td>
+            </tr>
 
-            <strong>Campus Wide ID</strong>
-            <input type = "text" name = "campusWideID" id = "campusWideID">
-            <br/>
+            <tr>
+                <td> <strong>Campus Wide ID</strong> </td>
+                <td> <input type = "text" name = "campusWideID" id = "campusWideID"> </td>
+            </tr>
 
-            <strong>Anticipated Graduation</strong>
-            <select name = "anticipatedGraduation" id = "anticipatedGraduation">
-                <option value = "2020SpringGraduation">2020 Spring</option>
-                <option value = "2020SummerGraduation">2020 Summer</option>
-                <option value = "2020FallGraduation">2020 Fall</option>
+            <tr>
+                <td> <strong>Anticipated Graduation</strong> </td>
+                <td> <select name = "anticipatedGraduation" id = "anticipatedGraduation">
+                    <option value = "2020SpringGraduation">2020 Spring</option>
+                    <option value = "2020SummerGraduation">2020 Summer</option>
+                    <option value = "2020FallGraduation">2020 Fall</option>
 
-                <option value = "2021SpringGraduation">2021 Spring</option>
-                <option value = "2021SummerGraduation">2021 Summer</option>
-                <option value = "2021FallGraduation">2021 Fall</option>
+                    <option value = "2021SpringGraduation">2021 Spring</option>
+                    <option value = "2021SummerGraduation">2021 Summer</option>
+                    <option value = "2021FallGraduation">2021 Fall</option>
 
-                <option value = "2022SpringGraduation">2022 Spring</option>
-                <option value = "2022SummerGraduation">2022 Summer</option>
-                <option value = "2022FallGraduation">2022 Fall</option>
-            </select>
-            <br/>
+                    <option value = "2022SpringGraduation">2022 Spring</option>
+                    <option value = "2022SummerGraduation">2022 Summer</option>
+                    <option value = "2022FallGraduation">2022 Fall</option>
+                </select> </td>
+            </tr>
 
-            <strong>Plan Type</strong>
-            <select name = "planType" id = "planType">
-                <option value = "studyPlan">Study Plan</option>
-                <option value = "applicationForCandidacy">Application for Candidacy</option>
-            </select>
-            <br/>
+            <tr>
+                <td> <strong>Plan Type</strong> </td>
+                <td> <select name = "planType" id = "planType">
+                    <option value = "studyPlan">Study Plan</option>
+                    <option value = "applicationForCandidacy">Application for Candidacy</option>
+                </select> </td>
+            </tr>
 
+            <tr>
+                <td> <strong>Int'l Student OPT</strong> </td>
+                <td><select name = "internationalStudent" id = "internationalStudent">
+                    <option value = "selectOPT">-select-</option>
+                    <option value = "yesInternationalOPT">Yes</option>
+                    <option value = "noInternationalOPT">No</option>
+                </select> </td>
+            </tr>
 
-            <strong>Int'l Student OPT</strong>
-            <select name = "internationalStudent" id = "internationalStudent">
-                <option value = "selectOPT">-select-</option>
-                <option value = "yesInternationalOPT">Yes</option>
-                <option value = "noInternationalOPT">No</option>
-            </select>
-            <br/>
+            <tr>
+                <td><strong>Select Degree</strong> </td>
+                <td><select name = "degree" id = "degree">
+                    <option value = "ME">ME</option>
+                    <option value = "MS">MS</option>
+                </select> </td>
+            </tr>
 
-            <strong>Select Degree</strong>
-            <select name = "degree" id = "degree">
-                <option value = "ME">ME</option>
-                <option value = "MS">MS</option>
-            </select>
-            <br/>
+            <tr>
+                <td><strong>Select Major</strong></td>
+                <td><select name = "major" id = "major">
+                    <option value = "AAI">AAI</option>
+                    <option value = "EE">EE</option>
+                    <option value = "CPE">CPE</option>
+                </select></td>
+            </tr>
 
-            <strong>Select Major</strong>
-            <select name = "major" id = "major">
-                <option value = "AAI">AAI</option>
-                <option value = "EE">EE</option>
-                <option value = "CPE">CPE</option>
-            </select>
-            <br/>
+            <tr>
+                <td> <strong>Select Concentration</strong> </td>
+                <td><select name = "concentration" id = "concentration">
+                    <option value = "electricalEngineering">Electrical Engineering</option>
+                    <option value = "computerEngineering">Computer Engineering</option>
+                    <option value = "dataEngineering">Data Engineering</option>
+                    <option value = "softwareEngineering">Software Engineering</option>
+                    <option value = "biomedicalEngineering">Biomedical Engineering</option>
+                    <option value = "systemsBiology">Systems Biology</option>
+                    <option value = "mechanicalEngineering">Mechanical Engineering</option>
+                    <option value = "AIInDesignAndConstruction">AI in Design and Construction </option>
+                </select> </td>
+            </tr>
 
-            <strong>Select Concentration</strong>
-            <select name = "concentration" id = "concentration">
-                <option value = "electricalEngineering">Electrical Engineering</option>
-                <option value = "computerEngineering">Computer Engineering</option>
-                <option value = "dataEngineering">Data Engineering</option>
-                <option value = "softwareEngineering">Software Engineering</option>
-                <option value = "biomedicalEngineering">Biomedical Engineering</option>
-                <option value = "systemsBiology">Systems Biology</option>
-                <option value = "mechanicalEngineering">Mechanical Engineering</option>
-                <option value = "AIInDesignAndConstruction">AI in Design and Construction </option>
-            </select>
-            <br/>
-            <input id = "submitStudyPlanInfoButton" type = button value = "Submit">
+            <tr><td><input id = "submitStudyPlanInfoButton" type = button value = "Submit"></td></tr>
             <script>
                 class StudyPlanInfo{
                     constructor(firstName, lastName, campusWideID, anticipatedGraduation,planType,internationalStudent,degree, major,concentration) {
@@ -117,7 +137,6 @@
                         alert(this.major);
                         alert(this.concentration);
                     }
-
                 }
 
                 function submitStudyPlanInfo()

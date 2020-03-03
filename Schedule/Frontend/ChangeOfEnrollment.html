@@ -5,81 +5,107 @@
     <h1>EZ Forms</h1>
 
     <p>Welcome to EZ forms here you can set up your study plan and create your change of enrollment</p>
+	
+	<link rel="stylesheet" href="css/styleLayout.css">
+
 </head>
 
 <body>
-	<div class = "ChooseForm">
-		<a href = "C:\Users\Daniel\IdeaProjects\the131\Schedule\Frontend\layout.html">Accademic Schedule</a>
-		<br/>
-		<a href = "#">Change of Enrollment</a>
-	</div>
+	<table>
+		<tr>
+			<td><div class = "ChooseForm">
+				<a href = "C:\Users\Daniel\IdeaProjects\the131\Schedule\Frontend\layout.html">Accademic Schedule</a>
+				<br/>
+				<a href = "#">Change of Enrollment</a>
+			</div></td>
+			<td>
+				<a href = "https://shibboleth.stevens.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s1">
+				<img src="stevensLogo.png" alt="Stevens_Logo" width = "200" height="200">
+				</a>
+			</td>
+		<tr>
+	<table>
 	<br/>
 	<br/>
 
 <form>
-    <td>
-        <strong>First Name</strong>
-        <input type = "text" name = "firstName" id = "firstName">
-        <br/>
+    <table>
+		<tr>
+			<td><strong>First Name</strong></td>
+			<td><input type = "text" name = "firstName" id = "firstName"></td>
+        </tr>
+	
+		<tr>
+			<td><strong>Last Name</strong></td>
+			<td><input type = "text" name = "lastName" id = "lastName"></td>
+        </tr>
+	
+		<tr>
+			<td><strong>Middle Name</strong> </td> 
+			<td><input type = "text" name = "middleName" id = "middleName"> </td>
+        </tr>
 
-        <strong>Last Name</strong>
-        <input type = "text" name = "lastName" id = "lastName">
-        <br/>
+		<tr>
+			<td><strong>Campus Wide ID</strong></td>
+			<td><input type = "text" name = "campusWideID" id = "campusWideID"></td>
+        </tr>
+		
+		<tr><td></td></tr>
+		
+		<tr>
+			<td><strong>Mailing Address:</strong><td>
+        </tr>
 
-        <strong>Middle Name</strong>
-        <input type = "text" name = "middleName" id = "middleName">
-        <br/>
+		<tr>
+			<td><strong>Street Address</strong></td>
+			<td><input type = "text" name = "streetAddress" id = "streetAddress"></td>
+        </tr>
 
-        <strong>Campus Wide ID</strong>
-        <input type = "text" name = "campusWideID" id = "campusWideID">
-        <br/>
+		<tr>
+			<td><strong>City</strong></td>
+			<td><input type = "text" name = "city" id = "city"></td>
+        </tr>
+		
+		<tr>
+			<td><strong>State</strong></td>
+			<td><input type = "text" name = "state" id = "state"></td>
+        </tr>
 
-        <strong>Mailing Address:</strong>
-        <br/>
+		<tr>
+			<td><strong>Zip Code</strong></td>
+			<td><input type = "text" name = "zipCode" id = "zipCode"></td>
+        </tr>
 
-        <strong>Street Address</strong>
-        <input type = "text" name = "streetAddress" id = "streetAddress">
-        <br/>
+		<tr>
+			<td><strong>Anticipated Graduation</strong></td>
+			<td><select name = "anticipatedGraduation" id = "anticipatedGraduation">
+				<option value = "2020SpringGraduation">2020 Spring</option>
+				<option value = "2020SummerGraduation">2020 Summer</option>
+				<option value = "2020FallGraduation">2020 Fall</option>
 
-        <strong>City</strong>
-        <input type = "text" name = "city" id = "city">
-        <br/>
+				<option value = "2021SpringGraduation">2021 Spring</option>
+				<option value = "2021SummerGraduation">2021 Summer</option>
+				<option value = "2021FallGraduation">2021 Fall</option>
 
-        <strong>State</strong>
-        <input type = "text" name = "state" id = "state">
-        <br/>
+				<option value = "2022SpringGraduation">2022 Spring</option>
+				<option value = "2022SummerGraduation">2022 Summer</option>
+				<option value = "2022FallGraduation">2022 Fall</option>
+			</select></td>
+        </tr>
+		
+		<tr>
+			<td><strong>Courses Adding: </strong></td>
+			<td><input type = "text" name = "courseAdd" id = "courseAdd"></td>
+			<td><small>Separate Courses With a comma</small></td>
+        </tr>
 
-        <strong>Zip Code</strong>
-        <input type = "text" name = "zipCode" id = "zipCode">
-        <br/>
+		<tr>
+			<td><strong>Courses Dropping: </strong></td>
+			<td><input type = "text" name = "courseDrop" id = "courseDrop"></td>
+			<td><small>Separate Courses With a comma</small></td>
+        </tr>
 
-        <strong>Anticipated Graduation</strong>
-        <select name = "anticipatedGraduation" id = "anticipatedGraduation">
-            <option value = "2020SpringGraduation">2020 Spring</option>
-            <option value = "2020SummerGraduation">2020 Summer</option>
-            <option value = "2020FallGraduation">2020 Fall</option>
-
-            <option value = "2021SpringGraduation">2021 Spring</option>
-            <option value = "2021SummerGraduation">2021 Summer</option>
-            <option value = "2021FallGraduation">2021 Fall</option>
-
-            <option value = "2022SpringGraduation">2022 Spring</option>
-            <option value = "2022SummerGraduation">2022 Summer</option>
-            <option value = "2022FallGraduation">2022 Fall</option>
-        </select>
-        <br/>
-
-        <strong>Courses Adding: </strong>
-        <input type = "text" name = "courseAdd" id = "courseAdd">
-        <small>Separate Courses With a comma</small>
-        <br/>
-
-        <strong>Courses Dropping: </strong>
-        <input type = "text" name = "courseDrop" id = "courseDrop">
-        <small>Separate Courses With a comma</small>
-        <br/>
-
-        <input id = "submitChangeOfEnrollmentButton" type = button value = "Submit">
+        <tr><td><input id = "submitChangeOfEnrollmentButton" type = button value = "Submit"></td></tr>
         <Script>
             class ChangeOfEnrollmentInfo{
                 constructor(firstName,lastName,middleName,campusWideID,streetAddress,city,state,zipCode,anticipatedGraduation, courseAdd,courseDrop){
@@ -134,6 +160,6 @@
             document.getElementById('submitChangeOfEnrollmentButton').addEventListener('click',submitChangeOfEnrollmentInfo);
         </Script>
 
-    </td>
+    </table>
 </form>
 </body>
