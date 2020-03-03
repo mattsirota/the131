@@ -15,13 +15,16 @@
       - Kyle
       - Dan
     - Java Crypto
-      - Dan
+      - Kyle
       - Matt
  - Front-end formatting
+    - HTML and CSS
+      - Dan
     - Making the forms comprehensive
       - Sam
  - Creating a BFF (back-end for front-end)
     - Javascript
       - Gabi
       - Sam
+      - Dan
 
