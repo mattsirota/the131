@@ -17,7 +17,7 @@
             <td><div class = "ChooseForm">
                 <a href = "#">Accademic Schedule</a>
                 <br/>
-                <a href = "C:\Users\Daniel\IdeaProjects\the131\Schedule\Frontend\ChangeOfEnrollment.html">Change of Enrollment</a>
+                <a href = "C:\Users\Daniel\IdeaProjects\the131\ezforms\src\main\Frontend\ChangeOfEnrollment.html">Change of Enrollment</a>
             </div></td>
             <td>
                 <a href = "https://shibboleth.stevens.edu/idp/profile/SAML2/Redirect/SSO?execution=e1s1">
@@ -48,22 +48,28 @@
             </tr>
 
             <tr>
+			<td><strong>Current Semester</strong></td>
+			<td><select type = "text" name = "semester" id = "semester">
+				<option value = 'WINTER'>Summer</option>
+				<option value = 'SPRING'>Spring</option>
+				<option value = 'SUMMER_ONE'>Summer I</option>
+				<option value = 'SUMMER_TWO'>Summer II</option>
+				<option value = 'FALL'>Fall</option>
+			</select></td>
+			</tr>
+			
+			
+			<tr>
                 <td> <strong>Anticipated Graduation</strong> </td>
                 <td> <select name = "anticipatedGraduation" id = "anticipatedGraduation">
-                    <option value = "2020SpringGraduation">2020 Spring</option>
-                    <option value = "2020SummerGraduation">2020 Summer</option>
-                    <option value = "2020FallGraduation">2020 Fall</option>
-
-                    <option value = "2021SpringGraduation">2021 Spring</option>
-                    <option value = "2021SummerGraduation">2021 Summer</option>
-                    <option value = "2021FallGraduation">2021 Fall</option>
-
-                    <option value = "2022SpringGraduation">2022 Spring</option>
-                    <option value = "2022SummerGraduation">2022 Summer</option>
-                    <option value = "2022FallGraduation">2022 Fall</option>
+                    <option value = 2020>2020</option>
+                    <option value = 2021>2021</option>
+					<option value = 2022>2022</option>
+					<option value = 2023>2023</option>
+					<option value = 2024>2024</option>
                 </select> </td>
             </tr>
-
+			
             <tr>
                 <td> <strong>Plan Type</strong> </td>
                 <td> <select name = "planType" id = "planType">
@@ -115,10 +121,11 @@
             <tr><td><input id = "submitStudyPlanInfoButton" type = button value = "Submit"></td></tr>
             <script>
                 class StudyPlanInfo{
-                    constructor(firstName, lastName, campusWideID, anticipatedGraduation,planType,internationalStudent,degree, major,concentration) {
+                    constructor(firstName, lastName, campusWideID, semester, anticipatedGraduation,planType,internationalStudent,degree, major,concentration) {
                         this.firstName = firstName;
                         this.lastName = lastName;
                         this.campusWideID = campusWideID;
+						this.semester = semester;
                         this.anticipatedGraduation = anticipatedGraduation;
                         this.planType = planType;
                         this.internationalStudent = internationalStudent
@@ -130,6 +137,7 @@
                         alert(this.firstName);
                         alert(this.lastName);
                         alert(this.campusWideID);
+						alert(this.semester);
                         alert(this.anticipatedGraduation);
                         alert(this.planType);
                         alert(this.internationalStudent);
@@ -145,14 +153,15 @@
                     var firstName =  document.getElementById('firstName').value;
                     var lastName = document.getElementById('lastName').value;
                     var campusWideID = document.getElementById('campusWideID').value;
-                    var anticipatedGraduation = document.getElementById('anticipatedGraduation').value;
+                    var semester = document.getElementById('semester').value;
+					var anticipatedGraduation = parseInt(document.getElementById('anticipatedGraduation').value);
                     var planType = document.getElementById('planType').value;
                     var internationalStudent = document.getElementById('internationalStudent').value;
                     var degree = document.getElementById('degree').value;
                     var major = document.getElementById('major').value;
                     var concentration = document.getElementById('concentration').value;
 
-                    studyPlanObj = new StudyPlanInfo(firstName,lastName,campusWideID,anticipatedGraduation,planType, internationalStudent,major,concentration);
+                    studyPlanObj = new StudyPlanInfo(firstName,lastName,campusWideID,semester, anticipatedGraduation,planType, internationalStudent,major,concentration);
                     //studyPlanObj.proveExistance();
 
                     var studyPlanObjJSON = JSON.stringify(studyPlanObj);
