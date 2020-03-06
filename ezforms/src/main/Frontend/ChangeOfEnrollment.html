@@ -111,15 +111,65 @@
         </tr>
 		
 		<tr>
-			<td><strong>Courses Adding </strong></td>
-			<td><input type = "text" name = "addCourse" id = "addCourse"></td>
-			<td><small>Separate courses with a comma</small></td>
+			<td valign="top"><strong>Courses Adding </strong></td>			
+			<td>
+				<div id = "addCourseDiv1">
+					<input type = "text" name = "addCourse1" id = "addCourse1">
+				</div>
+				<div id = "addCourseDiv2">
+					<input type = "text" name = "addCourse2" id = "addCourse2">
+				</div>
+				<div id = "addCourseDiv3">
+					<input type = "text" name = "addCourse3" id = "addCourse3">
+				</div>
+				<div id = "addCourseDiv4">
+					<input type = "text" name = "addCourse4" id = "addCourse4">
+				</div>
+				<div id = "addCourseDiv5">
+					<input type = "text" name = "addCourse5" id = "addCourse5">
+				</div>
+			</td>
+			<td>
+				<select type = "text" name = "addCourseDisplayNum" id = "addCourseDisplayNum" onchange = 'displayAddCourseInputs()'>
+					<option value = 0>-</option>
+					<option value = 1>1</option>
+					<option value = 2>2</option>
+					<option value = 3>3</option>
+					<option value = 4>4</option>
+					<option value = 5>5</option>
+				</select>
+			</td>
         </tr>
 
 		<tr>
-			<td><strong>Courses Dropping </strong></td>
-			<td><input type = "text" name = "dropCourse" id = "dropCourse"></td>
-			<td><small>Separate courses with a comma</small></td>
+			<td valign = "top"><strong>Courses Dropping </strong></td>
+			<td>
+				<div id = "dropCourseDiv1">
+					<input type = "text" name = "dropCourse1" id = "dropCourse1">
+				</div>
+				<div id = "dropCourseDiv2">
+					<input type = "text" name = "dropCourse2" id = "dropCourse2">
+				</div>
+				<div id = "dropCourseDiv3">
+					<input type = "text" name = "dropCourse3" id = "dropCourse3">
+				</div>
+				<div id = "dropCourseDiv4">
+					<input type = "text" name = "dropCourse4" id = "dropCourse4">
+				</div>
+				<div id = "dropCourseDiv5">
+					<input type = "text" name = "dropCourse5" id = "dropCourse5">
+				</div>
+			</td>
+			<td>
+				<select type = "text" name = "dropCourseDisplayNum" id = "dropCourseDisplayNum" onchange = 'displayDropCourseInputs()'>
+					<option value = 0>-</option>
+					<option value = 1>1</option>
+					<option value = 2>2</option>
+					<option value = 3>3</option>
+					<option value = 4>4</option>
+					<option value = 5>5</option>
+				</select>
+			</td>
         </tr>
 
         <tr><td><input id = "submitChangeOfEnrollmentButton" type = button value = "Submit"></td></tr>
@@ -158,6 +208,59 @@
 					alert(this.dropCourse);
                 }
             }
+			var addA = document.getElementById('addCourseDiv1');
+			var addB = document.getElementById('addCourseDiv2');
+			var addC = document.getElementById('addCourseDiv3');
+			var addD = document.getElementById('addCourseDiv4');
+			var addE = document.getElementById('addCourseDiv5');
+			addInputList = [addA, addB, addC, addD, addE];
+			
+			addA.style.display = "block";
+			addB.style.display = "none";
+			addC.style.display = "none";
+			addD.style.display = "none";
+			addE.style.display = "none";
+			
+			var dropA = document.getElementById('dropCourseDiv1');
+			var dropB = document.getElementById('dropCourseDiv2');
+			var dropC = document.getElementById('dropCourseDiv3');
+			var dropD = document.getElementById('dropCourseDiv4');
+			var dropE = document.getElementById('dropCourseDiv5');
+			dropInputList = [dropA, dropB, dropC, dropD, dropE];
+			
+			dropA.style.display = "block";
+			dropB.style.display = "none";
+			dropC.style.display = "none";
+			dropD.style.display = "none";
+			dropE.style.display = "none";
+			
+			
+			function displayAddCourseInputs()
+			{
+				var addCourseDisplayNum = document.getElementById('addCourseDisplayNum').value;
+				addCourseDisplayNum = addCourseDisplayNum - 1;
+				var i;
+				for(i = 0; i <=addCourseDisplayNum; i++){
+					addInputList[i].style.display = "block";}
+				
+				var j;
+				for(j = addCourseDisplayNum + 1; j<addInputList.length;j++){
+					addInputList[j].style.display = "none";}
+			
+			}
+			function displayDropCourseInputs()
+			{
+				var dropCourseDisplayNum = document.getElementById('dropCourseDisplayNum').value;
+				dropCourseDisplayNum = dropCourseDisplayNum - 1;
+				var i;
+				for(i = 0; i <=dropCourseDisplayNum; i++){		
+					dropInputList[i].style.display = "block";}
+				var j;
+				for(j = dropCourseDisplayNum + 1; j<dropInputList.length;j++){
+					dropInputList[j].style.display = "none";}
+			}
+			
+			
             function submitChangeOfEnrollmentInfo()
             {
                 var firstName = document.getElementById('firstName').value;
