@@ -175,7 +175,7 @@
         <tr><td><input id = "submitChangeOfEnrollmentButton" type = button value = "Submit"></td></tr>
         <Script>
             class ChangeOfEnrollmentInfo{
-                constructor(firstName,lastName,middleName,campusWideID,isUndergrad,year, semester,streetAddress,city,state,zipCode,anticipatedGraduation, addCourse,dropCourse){
+                constructor(firstName,lastName,middleName,campusWideID,isUndergrad,year, semester,streetAddress,city,state,zipCode,anticipatedGraduation, addCourseDict1, addCourseDict2, addCourseDict3, addCourseDict4, addCourseDict5, dropCourseDict1, dropCourseDict2, dropCourseDict3, dropCourseDict4, dropCourseDict5){
                     this.firstName = firstName;
                     this.lastName = lastName;
                     this.middleName = middleName;
@@ -188,8 +188,8 @@
                     this.state = state;
                     this.zipCode = zipCode;
                     this.anticipatedGraduation = anticipatedGraduation;
-                    this.addCourse = addCourse;
-                    this.dropCourse = dropCourse;
+                    this.addCourse = [addCourseDict1, addCourseDict2, addCourseDict3, addCourseDict4, addCourseDict5];
+                    this.dropCourse = [dropCourseDict1, dropCourseDict2, dropCourseDict3, dropCourseDict4, dropCourseDict5];
                 }
                 proveExistance(){
 					alert(this.firstName);
@@ -260,7 +260,6 @@
 					dropInputList[j].style.display = "none";}
 			}
 			
-			
             function submitChangeOfEnrollmentInfo()
             {
                 var firstName = document.getElementById('firstName').value;
@@ -275,10 +274,74 @@
 				var state = document.getElementById('state').value;
 				var zipCode = parseInt(document.getElementById('zipCode').value);
 				var anticipatedGraduation = parseInt(document.getElementById('anticipatedGraduation').value);
-				var addCourse = document.getElementById('addCourse').value;
-				var dropCourse = document.getElementById('dropCourse').value;
 				
-				changeOfEnrollmentObj = new ChangeOfEnrollmentInfo(firstName,lastName,middleName, campusWideID,isUndergrad, year, semester, streetAddress, city, state, zipCode, anticipatedGraduation, addCourse, dropCourse);
+				
+				var addCourse1 = (document.getElementById('addCourse1').value).split(" ");
+				var addCourse2 = (document.getElementById('addCourse2').value).split(" ");
+				var addCourse3 = (document.getElementById('addCourse3').value).split(" ");
+				var addCourse4 = (document.getElementById('addCourse4').value).split(" ");
+				var addCourse5 = (document.getElementById('addCourse5').value).split(" ");
+				
+				var addCourseDict1 = {
+					subject:addCourse1[0],
+					number:addCourse1[1],
+					section:addCourse1[2]
+				};
+				var addCourseDict2 = {
+					subject:addCourse2[0],
+					number:addCourse2[1],
+					section:addCourse2[2]
+				};
+				var addCourseDict3 = {
+					subject:addCourse3[0],
+					number:addCourse3[1],
+					section:addCourse3[2]
+				};
+				var addCourseDict4 = {
+					subject:addCourse4[0],
+					number:addCourse4[1],
+					section:addCourse4[2]
+				};
+				var addCourseDict5 = {
+					subject:addCourse5[0],
+					number:addCourse5[1],
+					section:addCourse5[2]
+				};
+				
+				var dropCourse1 = (document.getElementById('dropCourse1').value).split(" ");
+				var dropCourse2 = (document.getElementById('dropCourse2').value).split(" ");
+				var dropCourse3 = (document.getElementById('dropCourse3').value).split(" ");
+				var dropCourse4 = (document.getElementById('dropCourse4').value).split(" ");
+				var dropCourse5 = (document.getElementById('dropCourse5').value).split(" ");
+				
+				var dropCourseDict1 = {
+					subject:dropCourse1[0],
+					number:dropCourse1[1],
+					section:dropCourse1[2]
+				};
+				var dropCourseDict2 = {
+					subject:dropCourse2[0],
+					number:dropCourse2[1],
+					section:dropCourse2[2]
+				};
+				var dropCourseDict3 = {
+					subject:dropCourse3[0],
+					number:dropCourse3[1],
+					section:dropCourse3[2]
+				};
+				var dropCourseDict4 = {
+					subject:dropCourse4[0],
+					number:dropCourse4[1],
+					section:dropCourse4[2]
+				};
+				var dropCourseDict5 = {
+					subject:dropCourse5[0],
+					number:dropCourse5[1],
+					section:dropCourse5[2]
+				};
+				
+				
+				changeOfEnrollmentObj = new ChangeOfEnrollmentInfo(firstName,lastName,middleName, campusWideID,isUndergrad, year, semester, streetAddress, city, state, zipCode, anticipatedGraduation, addCourseDict1,addCourseDict2, addCourseDict3, addCourseDict4,addCourseDict5, dropCourseDict1, dropCourseDict2, dropCourseDict3, dropCourseDict4, dropCourseDict5);
 				
 				//changeOfEnrollmentObj.proveExistance();
 				var changeOfEnrollmentObjJSON = JSON.stringify(changeOfEnrollmentObj);
@@ -292,3 +355,4 @@
     </table>
 </form>
 </body>
+</html>
