@@ -72,3 +72,11 @@ a {
     text-decoration: underline;
     text-transform: uppercase;
 }
+input[type=text]{
+  width: 100%;
+  padding: 6x 6px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+}
