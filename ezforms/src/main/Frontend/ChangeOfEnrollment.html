@@ -64,6 +64,7 @@
 
 		<tr>
 			<td><strong>Current Year</strong></td>
+			<td><input type = "text" name = "year" id = "year">
 		</tr>
 		
 		<tr>
@@ -347,9 +348,9 @@
 				
 				//changeOfEnrollmentObj.proveExistance();
 				var changeOfEnrollmentObjJSON = JSON.stringify(changeOfEnrollmentObj);
-				
 				console.log(typeof(changeOfEnrollmentObjJSON));
 				console.log(changeOfEnrollmentObjJSON);
+				return changeOfEnrollmentObjJSON;
 			}	
             document.getElementById('submitChangeOfEnrollmentButton').addEventListener('click',submitChangeOfEnrollmentInfo);
         </Script>
