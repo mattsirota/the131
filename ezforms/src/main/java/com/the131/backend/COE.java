@@ -4,28 +4,27 @@ package com.the131.backend;
 //import org.json.simple.JSONObject;
 //import org.json.simple.parser.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 
 @Entity
-public class ChangeEnrollment {
+@Table(name = "COE")
+public class COE {
     enum Semester {
         WINTER, SPRING, SUMMER_ONE, SUMMER_TWO, FALL
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+
     private String lastName;
-    @NotNull
+
     private String firstName;
     private String middleName;
-    @NotNull
+
     private String campusWideID;
     private String streetAddress;
     private String city;

@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33e9cffc-cc56-4ba9-9c8b-8e8e9e0e670d" name="Default Changelist" comment="" />
+    <list default="true" id="33e9cffc-cc56-4ba9-9c8b-8e8e9e0e670d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ezforms.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/the131/backend/COEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/the131/backend/COEController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/the131/backend/COERepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/the131/backend/COERepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/the131/backend/COEService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/the131/backend/COEService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/the131/backend/ChangeEnrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/the131/backend/COE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/the131/backend/COEController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/the131/backend/COEController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/the131/backend/COERepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/the131/backend/COERepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/the131/backend/COEService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/the131/backend/COEService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/the131/backend/ChangeEnrollment$Semester.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/the131/backend/ChangeEnrollment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/the131/backend/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/the131/backend/Course.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +48,24 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1aGiOJCLatnkE0WmyDwKnvt7Rxv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DataStructures_Homeworks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -103,10 +128,23 @@
       <workItem from="1586877743936" duration="16323000" />
       <workItem from="1586978696644" duration="1001000" />
       <workItem from="1586992180156" duration="21000" />
+      <workItem from="1587568917181" duration="5185000" />
+      <workItem from="1588104451153" duration="235000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

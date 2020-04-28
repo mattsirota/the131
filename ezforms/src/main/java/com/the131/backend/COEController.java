@@ -12,12 +12,12 @@ public class COEController {
     }
 
     @PostMapping("/ChangeEnrollment")
-    ChangeEnrollment postCOE(@RequestBody ChangeEnrollment newCOE){
+    COE postCOE(@RequestBody COE newCOE){
         return service.postCOE(newCOE);
     }
 
     @GetMapping("/ChangeEnrollment/{id}")
-    ChangeEnrollment getCOE(@PathVariable Long id) throws Exception {
+    COE getCOE(@PathVariable Long id) throws Exception {
         return service.getCOE(id);
 }
 

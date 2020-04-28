@@ -1,9 +1,6 @@
 package com.the131.backend;
 
-import javafx.scene.control.TextFormatter;
 import org.springframework.stereotype.Service;
-
-import javax.validation.Valid;
 
 @Service
 public class COEService {
@@ -13,11 +10,11 @@ public class COEService {
         this.repository = repository;
     }
 
-    ChangeEnrollment postCOE(@Valid ChangeEnrollment postCOE){
+    COE postCOE(COE postCOE){
         return repository.save(postCOE);
     }
 
-    ChangeEnrollment getCOE(@Valid Long id) throws Exception {
+    COE getCOE(Long id) throws Exception {
         try{
             return repository.findOne(id);
         }catch(Error e){
